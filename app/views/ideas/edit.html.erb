@@ -1,7 +1,9 @@
-<h1>This is the new page</h1>
+<h1>Edit your Idea here</h1>
 
 <%= form_for @idea do |form| %>
 	<%= render partial: '/ideas/form', object: form %>
-	<%= form.submit %>
+
+  <%= form.submit %>
 <% end %>
 
+<%= link_to "[ Back ]", idea_path %>

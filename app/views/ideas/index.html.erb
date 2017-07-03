@@ -2,3 +2,5 @@
 	<h2><%= link_to "#{i.title}", idea_path(i) %></h2>
 	<p><%= time_ago_in_words(i.created_at) %></p>
 <% end %>
+
+<%= link_to "[ New Idea ]", new_idea_path %>

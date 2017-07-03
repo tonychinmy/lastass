@@ -22,12 +22,19 @@ class IdeasController < ApplicationController
 	end
 
 	def update
+		if @idea.update(idea_params)
+			redirect_to @idea 
+		else
+			render 'edit'
+		end
 	end
 
 	def show
 	end
 
 	def destroy
+		@idea.destroy
+			redirect_to ideas_path
 	end
 
 	private
