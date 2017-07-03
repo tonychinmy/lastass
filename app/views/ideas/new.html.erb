@@ -1,0 +1,6 @@
+<h1>This is the new page</h1>
+
+<%= form_for @idea do |form| %>
+	<%= render partial: '/ideas/form', object: form %>
+	<%= form.submit %>
+<% end %>
