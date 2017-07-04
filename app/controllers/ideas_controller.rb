@@ -1,5 +1,6 @@
 class IdeasController < ApplicationController
 	before_action :find_idea, only: [:show, :edit, :update, :destroy]
+	before_action :check_owner, only: [:edit, :update, :destroy]
 
 	def index
 		@ideas = Idea.all.order("created_at DESC")
@@ -42,6 +43,12 @@ class IdeasController < ApplicationController
 	def find_idea
 		@idea = Idea.find(params[:id])
 	end
+
+	def check_owner
+    unless @idea.user_id == current_user.id
+      redirect_to root_path, notice: "You are not allowed to access that page."
+    end
+  end
 
 	def idea_params
 		params.require(:idea).permit(:title, :content)
