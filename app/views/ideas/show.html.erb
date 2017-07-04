@@ -1,7 +1,9 @@
-<h1><%= @idea.title %></h1>
-<p><%= @idea.content %></p>
-
-<%= link_to "[ All Ideas ]", ideas_path %>
-
+<p></p>
+<div>
 <%= link_to "[ Edit ]", edit_idea_path(@idea) %>
 <%= link_to "[ Delete ]", idea_path(@idea), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<h1><%= @idea.title %></h1>
+<h3><%= @idea.content %></h3>
+
+

@@ -1,12 +1,13 @@
 class SessionsController < ApplicationController
   def new
+
   end
 
   def create
 	user = User.find_by_email(params[:email])
 		if user && user.authenticate(params[:password])
 			session[:user_id] = user.id
-			redirect_to root_path, notice: "Logged In!"
+			redirect_to welcome_index_path, notice: "Logged In!"
 		else
 			flash.now.alert = "Email or Password is Invalid!"
 			render 'new'
@@ -26,7 +27,7 @@ class SessionsController < ApplicationController
 	  if authentication.user
 	    user = authentication.user
 	    authentication.update_token(auth_hash)
-	    @next = root_url
+	    @next = welcome_index_url
 	    @notice = "Signed in!"
 	  # else: user logs in with OAuth for the first time
 	  else

@@ -1,6 +1,10 @@
 class WelcomeController < ApplicationController
   def index
-  	# # @user = User.find(params[:id])
-  	# @user = User.find_by_id(params[:user_id])
+  	unless logged_in?
+      redirect_to login_path
+   	end
+
+   	user_ideas = Idea.where(user_id: current_user)
+   	@user_ideas = user_ideas.order("created_at DESC")
   end
 end

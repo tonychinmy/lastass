@@ -1,4 +1,6 @@
-<h1>Log In</h1>
+<div class="greet">
+<h1>Have Ideas? Don't let it go</h1>
+<h1>Join Us Today</h1>
 
 <%= form_tag sessions_path do %>
 	<div class="field">
@@ -10,7 +12,13 @@
 	<%= label_tag :Password %><br>
 	<%= password_field_tag :password %>
 	</div>
-
+	<p></p>
 	<div class="actions"><%= submit_tag "Log In" %></div>
 
 <% end %>
+
+<p>Not an IdeaTic?</p>
+<div><%= link_to "Sign Up Now", signup_path %></div>
+<div>or</div>
+<div><%= link_to "Sign in with Facebook", "/auth/facebook" %></div>
+</div>

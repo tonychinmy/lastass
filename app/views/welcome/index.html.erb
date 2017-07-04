@@ -1,4 +1,9 @@
-<h1>This is the welcome placeholder</h1>
-<% if logged_in? %>
-	<%= link_to "Create a New Idea", new_idea_path %>
+<h1>This is the place where IdeaTic like you Flourish</h1>
+
+<%= link_to "Create a New Idea", new_idea_path %>
+
+<% @user_ideas.each do |i| %>
+	<h2><%= link_to "#{i.title}", idea_path(i) %></h2>
+	<p><%= time_ago_in_words(i.created_at) %></p>
 <% end %>
+
