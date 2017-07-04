@@ -4,6 +4,7 @@ class IdeasController < ApplicationController
 
 	def index
 		@ideas = Idea.all.order("created_at DESC")
+		@user_ideas = Idea.where(user_id: current_user)
 	end
 
 	def new
