@@ -1,1 +1,4 @@
 <h1>This is the welcome placeholder</h1>
+<% if logged_in? %>
+	<%= link_to "Create a New Idea", new_idea_path %>
+<% end %>
