@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
 	before_action :find_idea, only: [:show, :edit, :update, :destroy]
-	before_action :check_owner, only: [:edit, :update, :destroy]
+	 	
 
 	def index
 		@ideas = Idea.all.order("created_at DESC")
