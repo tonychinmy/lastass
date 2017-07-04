@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	before_action :find_user, only: [:show, :edit, :update, :destroy]
 
 	def new
 		@user = User.new
@@ -12,6 +13,17 @@ class UsersController < ApplicationController
 		else
 			render 'new'
 		end
+	end
+
+	def show
+	end
+
+	def edit
+	end
+
+	def update
+		@user.update(user_params)
+    redirect_to user_path
 	end
 
 	private
