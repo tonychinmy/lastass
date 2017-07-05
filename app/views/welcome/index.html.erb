@@ -1,3 +1,10 @@
+<% form_tag root_path do %>
+  <p>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
+
 <h1>Dashboard for IDEAS</h1>
 
 <%= link_to "Create a New Idea", new_idea_path %>
