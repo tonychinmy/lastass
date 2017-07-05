@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
    !current_user.nil?
   end
 
+  def current_idea
+  	@current_idea ||= Idea.find(params[:id])
+  end
+
 end

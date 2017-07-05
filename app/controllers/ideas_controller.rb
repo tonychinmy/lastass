@@ -33,12 +33,12 @@ class IdeasController < ApplicationController
 	end
 
 	def show
-		
+
 	end
 
 	def destroy
 		@idea.destroy
-			redirect_to ideas_path
+			redirect_to root_path
 	end
 
 	private

@@ -5,6 +5,6 @@ class WelcomeController < ApplicationController
    	end
 
    	user_ideas = Idea.where(user_id: current_user)
-   	@user_ideas = user_ideas.order("created_at DESC")
+   	@user_ideas = user_ideas.order("created_at DESC").page params[:page]
   end
 end
