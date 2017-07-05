@@ -7,4 +7,5 @@ class Idea < ApplicationRecord
 	# pg_search_scope :search_by_title, :against => :title
 	# pg_search_scope :search_by_content, :against => :content
 	scope :title, -> (title) { where "LOWER(title) LIKE LOWER(?)", "%#{title}%" }
+
 end
