@@ -10,7 +10,9 @@
   </head>
 
   <body>
+  <% if logged_in? %>
     <p><%= link_to "[ Home ]", root_path %></p>
+  <% end %>
     	<div id="container">
     		<div id="user_header">
     		<% if current_user %>
@@ -24,12 +26,14 @@
     			<%= content_tag :div, msg, id: "flash_#{name}" %>
     		<% end %>
 
-<div><%= form_tag(root_path, :method => "get") do %>
+<% if logged_in? %>
+  <div><%= form_tag(root_path, :method => "get") do %>
 
-<%= text_field_tag :title, params[:title], placeholder: "Title" %><br>
+  <%= text_field_tag :title, params[:title], placeholder: "Title" %><br>
 
-</div>
-<%= submit_tag "Search Now", :name => nil %>
+  </div>
+  <%= submit_tag "Search Now", :name => nil %>
+  <% end %>
 <% end %>
   	
 
