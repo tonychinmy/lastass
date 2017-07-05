@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
 
   <body>
@@ -13,7 +14,7 @@
     	<div id="container">
     		<div id="user_header">
     		<% if current_user %>
-    			<p>Welcome <%= current_user.email %></p>
+    			<p>Welcome <%= current_user.username %></p>
           <p><%= link_to "My Profile", user_path(current_user) %></p>
     			<p><%= link_to "Log Out", logout_path %></p>
     		<% end %>

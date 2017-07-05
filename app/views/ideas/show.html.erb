@@ -7,3 +7,17 @@
 <h3><%= @idea.content %></h3>
 
 
+<%= form_for [@idea, Comment.new], remote: true do |f| %>
+	
+	<div>
+		<%= f.text_area :content, placeholder: "Comment here", id: "content" %>
+	</div>
+		<%= f.submit 'Submit' %>
+
+<% end %>
+
+<div id='comment-list'>
+<% @idea.comments.reverse.each do |comment| %>
+  <p><%= comment.content %></p>
+<% end %>
+</div>
